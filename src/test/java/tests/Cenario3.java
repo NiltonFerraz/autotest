@@ -1,6 +1,8 @@
 package tests;
 
 import java.util.concurrent.TimeUnit;
+
+import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 import org.openqa.selenium.By;
@@ -18,6 +20,13 @@ public class Cenario3 {
 		System.setProperty("webdriver.chrome.driver", "C:\\drivers\\chromedriver.exe");
 		driver = new ChromeDriver();
 		driver.manage().window().maximize();
+	}
+	
+	@After
+	public void tearDown() throws Exception {
+		Thread.sleep(3000);
+		driver.close();
+
 	}
 
 	@Test
